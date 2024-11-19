@@ -3,7 +3,7 @@ function bubbleSort(columnIndex) {
         const rows = Array.from(table.rows).slice(1); // Get all rows excluding the header
         let swapped;
 
-        // Bubble sort on selected column
+
         do {
             swapped = false;
             for (let i = 0; i < rows.length - 1; i++) {
@@ -12,16 +12,16 @@ function bubbleSort(columnIndex) {
                 const cellA = rowA.cells[columnIndex].innerText;
                 const cellB = rowB.cells[columnIndex].innerText;
 
-                // Compare the values based on the selected column
+
                 if (isNaN(cellA) || isNaN(cellB)) {
-                    // If values are not numbers, compare as strings
+
                     if (cellA > cellB) {
-                        // Swap rows if out of order
+
                         table.tBodies[0].insertBefore(rowB, rowA);
                         swapped = true;
                     }
                 } else {
-                    // If values are numbers, compare as numbers
+
                     if (parseFloat(cellA) > parseFloat(cellB)) {
                         // Swap rows if out of order
                         table.tBodies[0].insertBefore(rowB, rowA);
